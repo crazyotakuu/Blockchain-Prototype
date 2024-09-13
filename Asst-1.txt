@@ -20,7 +20,3 @@ Data for a transaction should originate from a console prompt to the user.
 The input needs to be saved as an object and added to a file ending in.json.
 
 name is the content's SHA-256 hash that is stored in the file.  
-
-
-
-The fields listed below
