@@ -1,0 +1,26 @@
+Make a Python application (or programs) to fulfill the following requirements using Python 3:
+
+
+You will be creating two Python files for this project, each with a specific function.
+
+that, even though they each have a specific function, will eventually cooperate
+
+as a unified, well-designed program. It should generate a basic two data set.
+
+two types of structures: a "Transaction" and a "Block."  The logic for transactions ought to be in
+
+Transaction.py is the file where the block logic should be located, and
+
+block.py. 
+
+
+
+Data for a transaction should originate from a console prompt to the user.
+
+The input needs to be saved as an object and added to a file ending in.json.
+
+name is the content's SHA-256 hash that is stored in the file.  
+
+
+
+The fields listed below

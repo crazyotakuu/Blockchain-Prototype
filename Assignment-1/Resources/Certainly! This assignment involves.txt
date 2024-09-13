@@ -1,0 +1,84 @@
+Certainly! This assignment involves creating two Python files, transaction.py and block.py, each with specific functionalities. Together, these files will form a basic blockchain-like structure. Let's break down the requirements and I'll explain how to implement them.
+
+1. transaction.py
+Functionality:
+Prompt the user for transaction data.
+Store the transaction data as a JSON object.
+Save the JSON object to a file with the filename being the SHA-256 hash of the content stored in the file.
+Detailed Explanation:
+Prompt User for Transaction Data:
+
+You will need to use the input() function to prompt the user for transaction data. This data will typically include details like From, To, and Amount.
+Store as JSON and Save to File:
+
+After obtaining the transaction data, you'll create a Python dictionary with the required fields (Timestamp, From, To, Amount).
+Convert this dictionary to JSON format using the json.dumps() function.
+Calculate the SHA-256 hash of the JSON content. You can use the hashlib library for this purpose.
+Save the JSON content to a file with the filename as the calculated hash.
+Example of a saved transaction file:
+57bc6f8255b180cbaf73f286b107be0506713b32cfe8f41af29e5c1e17f8ca6d.json
+
+Content:
+{
+  "timestamp": 1660791892,
+  "from": "me",
+  "to": "you",
+  "amount": 100000
+}
+2. block.py
+Functionality:
+Process pending transactions and create a block.
+Move processed transactions to a "processed" folder.
+Save the block as a JSON object.
+Detailed Explanation:
+Process Pending Transactions:
+
+This involves gathering pending transactions. In your case, you'll need to read transaction files from a folder (which can be named pending or any other name you choose).
+Create a Block:
+
+A block will consist of two main parts: a header and a body.
+The body will be a list of transactions included in the block. These transactions are the ones read from the pending folder.
+The header will include fields like Block Height, Timestamp, Previous Block Hash, and Hash of the Block Body. You'll need to set these values accordingly.
+Move Processed Transactions:
+
+After creating the block, move the processed transactions to a "processed" folder (or any folder you choose to designate).
+Save Block as JSON:
+
+Similar to the transaction, you'll convert the block (both header and body) to JSON format and save it to a file.
+The filename should be the SHA-256 hash of the header content.
+Example of a saved block file:
+87febaa161ff01e32468b5a7f48bc64ea71ca02b9c21a10eba177b9ac115bad1.json
+
+Content:
+{
+  "header": {
+    "height": 0,
+    "timestamp": 1660792000,
+    "previousblock": "NA",
+    "hash": "a82149a5665faffa8dd01b516b8468c1a8dc7254eeea9471ab76bf4165213b40"
+  },
+  "body": [
+    {
+      "hash": "57bc6f8255b180cbaf73f286b107be0506713b32cfe8f41af29e5c1e17f8ca6d",
+      "content": {
+        "timestamp": 1660791892,
+        "from": "me",
+        "to": "you",
+        "amount": 100000
+      }
+    }
+  ]
+}
+Block Height Determination:
+You have multiple options to determine block height:
+
+Prompt the user for confirmation (as mentioned in the assignment).
+Read existing block files and determine the one with the highest height.
+Save the last block ID into a file and read that file. If it's empty, start a new chain.
+Implementation Approach:
+Decide which method you want to use to determine block height.
+Implement the functionalities described above in transaction.py and block.py following the detailed explanations.
+Test your program by running transaction.py to create transactions, and then run block.py to process and create blocks.
+Remember to handle file operations (reading, writing, moving files) using Python's built-in os module. Also, use json module for working with JSON data.
+
+Please let me know if you have any specific questions or if you'd like further assistance with

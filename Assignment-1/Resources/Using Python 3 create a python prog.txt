@@ -1,0 +1,66 @@
+Using Python 3 create a python program (or programs)  to meet the following requirements:
+
+For this project you will create two python files with specific functionality that, while each has their own respective purpose, will ultimately work together as a single cohesive program. The program should create a basic two data structures, a "Transaction" and a  "Block."  The Transaction logic should be in a file called transaction.py and the Block logic should be in a file called block.py. 
+
+For a transaction, data should come from a prompt to the user on the console.   The input should be stored as an object and saved to a .json file with the file name being the SHA-256 hash of the content stored in the file.  
+
+The following fields should be included in the .json file
+
+Timestamp - Unix timestamp
+From - you can use any string value for this for now as we are not creating official users yet
+To - Same as above
+Amount
+Example: 57bc6f8255b180cbaf73f286b107be0506713b32cfe8f41af29e5c1e17f8ca6d.json 
+
+{"timestamp":1660791892,"from":"me","to":"you","amount":100000}
+
+Keep in mind that if line breaks and spaces are included it will produce a different hash then a json value without spaces or line breaks.
+
+The transaction file will then need to be processed by a block program which takes pending transactions, adds them into a block data structure and them moves them to a processed folder.  At this point transaction validation is not required but you can start thinking about that for future projects. 
+
+Similar to a transaction, a block should be treated as an object that can be stored as a .json file. The block should be made up of two main parts, a header and a body.  The body should include a list/array of transactions included in the block.  The header should include the following:
+
+Block height(the order the block was created, initial block would be height 0, next block would be height 1, etc..)
+Timestamp
+Hash of the Previous Block (for a block of height 0 you can just use "NA")
+Hash of the Block Body for the current block 
+When the file is saved, hash the header content only and use the resulting hash as the name of the file. 
+
+Example:
+
+*** note the header portion of the json content below hashes to the value of 87febaa161ff01e32468b5a7f48bc64ea71ca02b9c21a10eba177b9ac115bad1.  This value would be used as the name of the file for the block
+
+87febaa161ff01e32468b5a7f48bc64ea71ca02b9c21a10eba177b9ac115bad1.json: 
+
+{"header"{"height":0,"timestamp":1660792000,"previousblock","NA","hash":"a82149a5665faffa8dd01b516b8468c1a8dc7254eeea9471ab76bf4165213b40"},{"body"[{"hash":57bc6f8255b180cbaf73f286b107be0506713b32cfe8f41af29e5c1e17f8ca6d","content":{"timestamp":1660791892,"from":"me","to":"you","amount":100000}]}
+
+a16fc059524e6e39967d0c572dc605093ea67e0fced4505dfd1d0efe6ee826d9.json:
+
+{"header"{"height":1,"timestamp":1660800000,"previousblock","87febaa161ff01e32468b5a7f48bc64ea71ca02b9c21a10eba177b9ac115bad1","hash":"357164f7b0df05523175f1f5717aa86b3455f4dbb6e9180c7778931accfae256"},{"body"[{"hash":"baa27afc5e5dbca5e62167e3dd6a69b909e753ec8570dd8ef9676e77bb0b81b0","content":{"timestamp":1660793000,"from":"alice","to":"bob,"amount":2000},"hash:"54746bc852f7833013af1ee4897e332b053160f9713d9b5063467c4dfa1287b7","content":{"timestamp":1660793500,"from":"alice","to":"you","amount":2500}]}
+
+Notice that each block file is unique with its own respective set of transactions.  Transactions included in block 0 should not be included in block 1.  Also note that the hash of the for block 0(which is also part of the block 0 file name) is referenced as the previous block in block 1.   
+
+Your program also must be able to determine the correct block height.  One way to do this is to have block.py run and wait for a user prompt to perform the block creation.  All blocks created while block.py is running would be considered one "chain."   If you exit the program and run it again, it would start off with a block height of 0 again.    An alternative approach is to have it read all the existing block files and determine the one with the longest height and build off of that one.   Another approach is to save the last block ID into a file and read that file.  If it is empty start a new chain.  I will leave it up to each group to decide how they want to implement this. 
+
+ 
+
+The following grading criteria will be used.
+
+The program uses 2 files (transaction.py and block.py) -- 10 points.
+transaction.py prompts the user for proper values (to, from and amount) -- 10 points.
+transaction.py adds a timestamp to the user input, formats it as a json object and hashes the content. -- 10 points.
+transaction.py saves the transaction as a .json file with the hash of the content as the file name -- 10 points.
+When block.py is ran, it includes all pending transactions that have not been processed yet -- 10 points.
+block.py moves transactions that were included into a block from a pending folder to a processed folder -- 10 points.
+block.py only hashes the header content to determine the file name. -- 10 points
+block.py builds a chain with height value increasing for each block created.  -- 10 points.
+block.py properly references the previous block ID in the header data when creating a new block -- 10 points. 
+3 example blocks created by your program are included with your submission. -- 5 points. 
+A readme file with instructions on how to run your program is included -- 5 points.
+What you need to Submit (via Zip File) : 
+
+The worksheet outlining contribution of Group Members
+Python files (transaction.py, block.py)
+A requirements.txt file (if you installed any packages using PIP)
+A short readme file outlining how to use the program
+3 example blocks created by your program. - Each block should contain at least 1 transaction.  Please include the transaction files as well.

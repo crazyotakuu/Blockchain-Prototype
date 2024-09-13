@@ -1,0 +1,21 @@
+This project will address a few essential elements needed to convert the centralized blockchain system built as part of earlier assignments into a
+
+genuinely distributed system with network connectivity.   The significance of this
+
+The assignment will focus on using Python Sockets to exchange messages between clients.
+
+Establishing the foundational framework for a "gossip" protocol is the aim.
+
+which, when receiving a message, determines whether it has already received it and
+
+If not, forward the message to its colleagues.  
+
+
+
+Students will use Python to update their prior project work.
+
+To create connections between other (local) nodes, use socket communication.
+
+By attaching to the same localhost server, several nodes can connect to
+
+distinct ports. Every node used with local nodes ought to be included within

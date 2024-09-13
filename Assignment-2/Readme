@@ -1,0 +1,26 @@
+Executing this program is a bit complicated and can be confusing, so please follow the process carefully
+
+Information before execution:
+    
+    We have implemented account based approach, all the account and balance information is stored in a state dictionary in the block.py file. After every block creation the updated balance info is written into accounts.json to be read by the wallet.py
+
+    Currently I have limited the checking of transactions to 5 secs, every 5 seconds block.py will check for pending transactions in the Pending folder. It validates the sender address, reciever address and if the sender has enough balance and verifies the signiture. Once everything is right it processes the transaction, if anything is amiss it places the transaction into Rejected folder and the balances remain unchanged. It also checks if the sender, reciever exists or not.
+
+
+Steps for execution:
+    
+    Run block.py once, it checks for transactions every 5 sec.
+
+    Now run wallet.py in any Wallet. Once wallet.py runs it creates private and public key pair.
+        Once it creates the key pair, it will ask for the amount you want to add to your account from the genesis account, enter the amount. This is equivalent of buying initial cryptocurrency in real life.
+
+    During the next block.py run the amount will get added to your wallet, now you are ready for transactions.
+
+    A new prompt appears in the wallet.py terminal asking to pick any of the three options, check balance, create a transaction, check other account's balance.
+
+    You can choose anything and it will run the funtionality, to create a transaction you need reciever's address and amount you want to transfer.
+
+    If you create a transaction, it will take your inputs and create a transaction and sign. We wait for block.py to process the transaction, once it processes it we have updated balances.
+
+
+

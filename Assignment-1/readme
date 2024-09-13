@@ -1,0 +1,12 @@
+Executing this program is simple
+
+First execute the transaction.py and it prompts for 3 inputs - sender details(From), recipient details(To), Amount.
+
+Taking in all the inputs, it creates a transaction file in the pending folder.
+
+Now run the block.py file, it takes all the transactions in the pending folder and processes them.
+
+When block.py file gets executed, it takes all the transactions in the pending folder and creates a block file. It places the block file
+in the blocks folder and all the processed transactions in the processed folder.
+
+It additionally creates a blockdetails.json where we store the current height of the blocks and the last block created.

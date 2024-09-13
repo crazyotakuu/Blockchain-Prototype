@@ -1,0 +1,15 @@
+This project will produce a proof of work Blockchain by utilizing all of the ideas that we have been developing over the semester.  The updated feature
+
+A Proof of Work (POW) will be included with this assignment.
+
+puzzle.  Now, miners have to finish the riddle by locating a Nonce that matches the
+
+requirements before being permitted to construct the block.  The resolution is
+
+further must be incorporated into the block's header information.  In sequence
+
+The POW puzzle needs a stated goal in order to function effectively.  The decision is made by the
+
+group members to determine the best way to define the goal, but they should be
+
+created in a way that requires a significant amount of time to finish
