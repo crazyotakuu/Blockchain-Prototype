@@ -1,4 +1,13 @@
-Students will be building on the code used in project 1 by adding some extra features. In particular, they will be incorporating the idea of a Wallet. A wallet is a program in crypto blockchains that allows a user to track their digital currency. It also handles the process of creating a transaction and sending it to the blockchain to be verified and added. This assignment will not include sending transactions between wallets using network connections, which will be covered in project 3. However, wallets will be able to generate transactions and send them to a file that can be picked up and added to a block in the same way as Project 1. Students will need to create a new python file named wallet.py. This file will look within the same directory for a PEM file (storage of the wallet's private key). If the PEM file is not present, the wallet will use RSA key generation to create a new private/public key pair and store the private key in the PEM format. The Public Key
+Students will be building on the code used in project 1 by adding some extra features. In particular, they will be incorporating the idea of a Wallet.
+
+A wallet is a program in crypto blockchains that allows a user to track their digital currency. 
+It also handles the process of creating a transaction and sending it to the blockchain to be verified and added. 
+This assignment will not include sending transactions between wallets using network connections, which will be covered in project 3. 
+
+However, wallets will be able to generate transactions and send them to a file that can be picked up and added to a block in the same way as Project 1. 
+Students will need to create a new python file named wallet.py. 
+This file will look within the same directory for a PEM file (storage of the wallet's private key). 
+If the PEM file is not present, the wallet will use RSA key generation to create a new private/public key pair and store the private key in the PEM format.
 
 Overall = (20+15+20+19.5)/4 + (10+9) + (90/110)*20 + ((85+13)/120)*30 + MIN(10, (10*16-14)/12)
 18.625+19+16.36+24.5+10
